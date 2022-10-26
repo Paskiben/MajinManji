@@ -6,7 +6,7 @@ const Respuesta = () => {
   let texts = [
     "Que bien! me alegro!",
     "Qué pasó? bueno no debe ser para tanto...",
-    "Pucha, la próximo semana mejor!"
+    "Pucha, la próximo semana mejor!",
   ];
   const router = useRouter();
   console.log(router.query);
@@ -19,7 +19,7 @@ const Respuesta = () => {
 
       <main>
         <h1 className="title">{texts[router.query.opt]}</h1>
-
+        <p>{router.query.msg}</p>
         <div className="grid">
           <Link href={"/"}>
             <a className="card">Volver</a>
