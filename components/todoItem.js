@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 const TodoItem = ({ item }) => {
-  const [checked, setChecked] = useState(item.done);
+  const [listo, setListo] = useState(item.done);
 
   useEffect(() => {
     if (localStorage.getItem(item.id) !== null)
-      setChecked(JSON.parse(localStorage.getItem(item.id)));
+      setListo(JSON.parse(localStorage.getItem(item.id)));
   }, []);
 
   useEffect(() => {
-    localStorage.setItem(item.id, JSON.stringify(checked));
-  }, [checked]);
+    localStorage.setItem(item.id, JSON.stringify(listo));
+  }, [listo]);
 
   return (
     <>
@@ -18,9 +18,9 @@ const TodoItem = ({ item }) => {
         <div className="todo-item-done">
           <input
             type="checkbox"
-            checked={checked}
+            checked={listo}
             onChange={(e) => {
-              setChecked(!checked);
+              setListo(!listo);
             }}
           />
         </div>

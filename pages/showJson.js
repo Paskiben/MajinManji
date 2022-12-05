@@ -24,7 +24,7 @@ export default function ShowJSON({ data }) {
       </Head>
       <div>{JSON.stringify(data)}</div>
       {data.map((item, index) => (
-        <TodoItem key={index} item={item} />
+        <div>{(item[0] || item.title) + " (" + item.done + ")"} </div>
       ))}
     </Layout>
   );

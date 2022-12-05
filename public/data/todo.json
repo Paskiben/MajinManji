@@ -1,5 +1,5 @@
 [
-    {"id": "todo-1", "title":"estudiar programación con react","done":true},
+    {"id": "todo-1", "title":"estudiar programación con react","done":false},
     {"id": "todo-2", "title":"revisar artículo de conferencia","done":true},
     {"id": "todo-3", "title":"mecánico","done":false},
     {"id": "todo-4", "title":"supermercado","done":true},
