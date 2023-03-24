@@ -1,10 +1,18 @@
 # Tutorial: aplicaciones Web con React y Next I
 
-## Clonar el repositorio https://github.com/PabloSzx/INFO104-2021-1
+## Clonar el repositorio https://github.com/mallium/info104-ejemplos
 
-`git clone https://github.com/PabloSzx/INFO104-2021-1`
+`git clone https://github.com/mallium/info104-ejemplos`
 
 Este repositorio contiene una aplicación Web usando **React** y **Next.js**. React permite creación de interfaces de usuario **reactivas** y **dinámicas**. **Next.js** es un framework que que combina **React** y **Node.js** para que podamos construir aplicaciones Web completas en javascript (front-end y back-end) con una orientación a componentes. Revisar definiciones acá [tutorial de Pablo](https://observablehq.com/@pabloszx/info104-2020-2-introduccion-a-react?collection=@pabloszx/info104-2020-2)
+
+El branch main contiene varios ejemplos incluyendo uso de componentes chakra, creación de componentes, una sencilla api, etc. El branch holamundo contiene un ejemplo de página inicial.
+
+Para cambiar de branch:
+
+`git checkout holamundo`
+
+nos llevará al branch holamundo.
 
 ## Instalar dependencias, módulos node
 

@@ -1,65 +1,36 @@
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
+import { Center, Flex } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
 const Index = () => {
   return (
     <div className="container" id="principal">
       <Head>
-        <title>INFO104 Nextjs App</title>
+        <title>INFO104 Hola Mundo</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
-        <Image
-          src="/images/eye.png"
-          height={294} // Desired size with correct aspect ratio
-          width={470} // Desired size with correct aspect ratio
-          alt="ojo"
-        />
-
-        <h1 className="title">¿Cómo ha sido tu semana?</h1>
-        <div className="title">
-          <a href="http://www.google.com" target="_blank">
-            Ir a google
-          </a>
-        </div>
-        <p className="description">
-          Este código está en <code>pages/index.js</code>
-        </p>
-
-        <div className="grid">
-          <Link
-            href={{
-              pathname: "/response",
-              query: { opt: 0, msg: "este es el mensaje" },
-            }}
-          >
-            <a className="card">Excelente!</a>
-          </Link>
-          <Link
-            href={{
-              pathname: "/response",
-              query: { opt: 1 },
-            }}
-          >
-            <a className="card">Más o menos no mas!</a>
-          </Link>
-          <Link
-            href={{
-              pathname: "/response",
-              query: { opt: 2 },
-            }}
-          >
-            <a className="card">Horrible! :(</a>
-          </Link>
-          <a className="card" href="/response?opt=0&msg=hola%20chao">
-            click me!
-          </a>
-        </div>
+        <Flex flexDirection="column">
+          <Center h="400px" mt="200px">
+            <Image
+              src="/images/eye.png"
+              height={294} // Desired size with correct aspect ratio
+              width={470} // Desired size with correct aspect ratio
+              alt="ojo"
+            />
+          </Center>
+          <Center mt="10px" mb="20px">
+            <Button colorScheme="teal" size="lg" w="200px">
+              Hola Mundo!
+            </Button>
+          </Center>
+        </Flex>
       </main>
 
       <footer>
-        <a href="https://github.com/PabloSzx/INFO104-2021-1" target="_blank">
+        <a href="https://github.com/mallium/info104-ejemplos" target="_blank">
           Repositorio y tutorial
         </a>
         &nbsp;-&nbsp;
