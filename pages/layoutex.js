@@ -5,7 +5,7 @@ const LayoutEx = () => {
   return (
     <div id="bloquePrincipal">
       <div id="menuLateral">
-        <a href="http:www.google.com">Ir a google</a>
+        <a href="http://www.google.com">Ir a google</a>
       </div>
       <div id="contenidoPrincipal">
         {frases.contenido.map((item, index) => (
