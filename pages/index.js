@@ -31,7 +31,7 @@ const Index = () => {
           <Link
             href={{
               pathname: "/response",
-              query: { opt: 0, msg: "este es el mensaje" },
+              query: { opt: 0 },
             }}
           >
             <a className="card">Excelente!</a>
@@ -52,9 +52,6 @@ const Index = () => {
           >
             <a className="card">Horrible! :(</a>
           </Link>
-          <a className="card" href="/response?opt=0&msg=hola%20chao">
-            click me!
-          </a>
         </div>
       </main>
 
