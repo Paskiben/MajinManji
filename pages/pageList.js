@@ -4,7 +4,7 @@ import TodoItem from "../components/todoItem";
 import { useEffect } from "react";
 
 export async function getServerSideProps(context) {
-  const res = await fetch("http://localhost:3000/data/todo.json");
+  const res = await fetch("http://localhost:3001/data/todo.json");
   const data = await res.json();
 
   if (!data) {
