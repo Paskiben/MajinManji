@@ -163,12 +163,22 @@ code {
     Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
-.map__box{
-    position: absolute; 
-    top: 0; 
-    bottom: 0; 
-    left: 0; 
-    right: 0;
+#map {
+  height: 700px;
+  width: 90%;
+  margin: 20px auto;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+}
+
+.map__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 3rem;
+  background-color: #a6a8a9;
+  position: relative;
 }
 
 .grid {

@@ -16,7 +16,7 @@ const myIcon = L.icon({
     popupAnchor: [0, -36],
 });
 
-export default function Map({ comidas }) {
+export default function Map({ filtros }) {
   console.log(filtros);
 
   const position_valdivia = [-39.823651901716296, -73.23533346913247];
