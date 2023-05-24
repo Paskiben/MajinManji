@@ -4,6 +4,10 @@ import Image from "next/image";
 import React from "react";
 
 const Home = () =>{
+  let x = 0;
+  let y = 0;
+  let z = 0;
+  let maxZoom = 0;
   return (
   <><head>
       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -15,7 +19,7 @@ const Home = () =>{
         <div id="map"></div>
         <script>
           var map = L.map('map').setView([0, 0], 1);
-          L.tileLayer('https://api.maptiler.com/maps/basic-v2/{0}/{0}/{0}.png?key=IMB3ABV0SYPybpFYAmUP', {200}: 19,
+          L.tileLayer('https://api.maptiler.com/maps/basic-v2/0/0/0.png?key=IMB3ABV0SYPybpFYAmUP', {maxZoom}: 19,
           attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
           ).addTo(map);
         </script>
