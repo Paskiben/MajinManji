@@ -50,37 +50,37 @@ const Home = () =>{
           </FormLabel>
           <Switch id='F_SuperMercado' />
           <FormLabel htmlFor='F_Biblioteca' mb='0'>
-            biblioteca
+            Biblioteca
           </FormLabel>
           <Switch id='F_Biblioteca' />
           <FormLabel htmlFor='F_Discoteca' mb='0'>
-            discoteca
+            Discoteca
           </FormLabel>
           <Switch id='F_Discoteca' />
           <FormLabel htmlFor='F_Comida' mb='0'>
-            restoranes/picadas
+            Restoranes/picadas
           </FormLabel>
           <Switch id='F_Comida' />
           <FormLabel htmlFor='F_Lavanderias' mb='0'>
-            lavanderias
+            Lavanderias
           </FormLabel>
           <Switch id='F_Lavanderias' />
           <FormLabel htmlFor='F_Utilidades' mb='0'>
-            tiendas de utilidades.
+            Tiendas de utilidades.
           </FormLabel>
           <Switch id='F_Utilidades' />
           <FormLabel htmlFor='F_Ferias' mb='0'>
-            ubicacion de ferias.
+            Ferias
           </FormLabel>
           <Switch id='F_Ferias' />
           <FormLabel htmlFor='F_Tecnicos' mb='0'>
-            servicios tecnicos.
+            Servicios tecnicos
           </FormLabel>
           <Switch id='F_Tecnicos' />
-          <FormLabel htmlFor='F_Medico' mb='0'>
-            medico.
+          <FormLabel htmlFor='F_Salud' mb='0'>
+            Salud
           </FormLabel>
-          <Switch id='F_Medico' />
+          <Switch id='F_Salud' />
           </Stack>
           </DrawerBody>
 
