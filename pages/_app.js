@@ -2,6 +2,7 @@
 import "../styles/style.css";
 import { ChakraProvider } from "@chakra-ui/react";
 
+
 // Codigo aqui estará presente en todas las páginas
 const App = ({ Component, pageProps }) => {
   return (
