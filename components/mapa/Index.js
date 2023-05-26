@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 
 const Map = dynamic(() => import("./Map"), { ssr: false });
 
-// Cargando el mapa y pasándole props: comidas
+// Cargando el mapa y pasándole props: filtros
 export default function MapComponent({ filtros }) {
     return <Map filtros={filtros} />;
 }
