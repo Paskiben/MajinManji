@@ -7,10 +7,12 @@ import Head from "next/head";
 
 // React
 import { useState, useEffect } from "react";
+import { Icon } from "leaflet";
+import iconouwu from './icono2.png';
 
 // Iconos de marcadores personalizados
-const myIcon = L.icon({
-    iconUrl: "/imagenes_mapa/marker-icon.svg",
+const myIcon = new L.Icon({
+    iconUrl: require("./icono2.png"),//iconouwu,
     iconSize: [25, 41],
     iconAnchor: [12, 41],
     popupAnchor: [0, -36],
@@ -20,10 +22,11 @@ export default function Map({ filtros }) {
   console.log(filtros);
 
   const position_valdivia = [-39.823651901716296, -73.23533346913247];
+  var marker = position_valdivia;
   return (
     <>
       <Head>
-        <title>Titulo metadato</title>
+        <title>Mapa Mechon</title>
       </Head>
       <div className="map__box">
         {/* Configuraciones generales del Mapa, zoom, scroll, etc */}
@@ -37,6 +40,11 @@ export default function Map({ filtros }) {
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
+          <Marker position={marker} icon={myIcon}>
+            <Popup>
+            Icono de prueba. <br /> Este va a contener los datos del lugar en cuestion como por ejemplo horarios o comentarios.
+          </Popup>
+    </Marker>
         </MapContainer>
       </div>
     </>
