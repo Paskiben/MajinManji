@@ -11,7 +11,7 @@ import { Icon } from "leaflet";
 
 // Iconos de marcadores personalizados
 const myIcon = new L.Icon({
-    iconUrl: "/images/marker.png",//iconouwu,
+    iconUrl: "/images/marker.png",
     iconSize: [40, 40],
     iconAnchor: [12, 41],
     popupAnchor: [0, -36],
