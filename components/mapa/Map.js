@@ -8,11 +8,10 @@ import Head from "next/head";
 // React
 import { useState, useEffect } from "react";
 import { Icon } from "leaflet";
-import iconouwu from './icono2.png';
 
 // Iconos de marcadores personalizados
 const myIcon = new L.Icon({
-    iconUrl: require("./icono2.png"),//iconouwu,
+    iconUrl: "/images/marker.png",//iconouwu,
     iconSize: [25, 41],
     iconAnchor: [12, 41],
     popupAnchor: [0, -36],
