@@ -20,6 +20,18 @@ const myIcon = new L.Icon({
 export default function Map({ filtros }) {
   console.log(filtros);
 
+  const [placeResponse, setPlaces] = useState([]);
+  useEffect(() => {
+    async function getPlaces()
+    {
+      const response = await fetch('http://localhost:3000/api/place');
+      const res = await response.json();
+      console.log(res.result);
+      setPlaces(res.result);
+    }
+    getPlaces();
+  }, []);
+
   const position_valdivia = [-39.823651901716296, -73.23533346913247];
   var marker = position_valdivia;
   return (
@@ -39,11 +51,15 @@ export default function Map({ filtros }) {
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          <Marker position={marker} icon={myIcon}>
-            <Popup>
-            Icono de prueba. <br /> Este va a contener los datos del lugar en cuestion como por ejemplo horarios o comentarios.
-          </Popup>
-    </Marker>
+          {placeResponse.map((place) => {
+            return (
+              <Marker position={[place.latitude, place.longitude]} icon={myIcon}>
+                <Popup>
+                  <b>{place.name}</b><br /> {place.description}
+                </Popup>
+              </Marker>
+            )
+          })}
         </MapContainer>
       </div>
     </>

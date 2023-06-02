@@ -2,6 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import React from "react";
+import { useState, useEffect } from "react";
 import Map from "../components/mapa/Index.js";
 import {
   Drawer,
@@ -27,8 +28,20 @@ import {
 
 
 const Home = () =>{
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const btnRef = React.useRef()
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const btnRef = React.useRef();
+  //load data from database
+  const [categoryResponse, setCategories] = useState([]);
+  useEffect(() => {
+    async function getCategories()
+    {
+      const response = await fetch('http://localhost:3000/api/category');
+      const res = await response.json();
+      console.log(res.result);
+      setCategories(res.result);
+    }
+    getCategories();
+  }, []);
   return(<>
       <Button ref={btnRef} colorScheme='teal' onClick={onOpen}>
         Filtros
@@ -45,42 +58,12 @@ const Home = () =>{
           <DrawerHeader>Aplicacion de Filtros</DrawerHeader>
           <DrawerBody>
           <Stack direction={'column'} spacing='10px'>
-          <FormLabel htmlFor='F_SuperMercado' mb='0'>
-            Super Mercado
-          </FormLabel>
-          <Switch id='F_SuperMercado' />
-          <FormLabel htmlFor='F_Biblioteca' mb='0'>
-            Biblioteca
-          </FormLabel>
-          <Switch id='F_Biblioteca' />
-          <FormLabel htmlFor='F_Discoteca' mb='0'>
-            Discoteca
-          </FormLabel>
-          <Switch id='F_Discoteca' />
-          <FormLabel htmlFor='F_Comida' mb='0'>
-            Restoranes/picadas
-          </FormLabel>
-          <Switch id='F_Comida' />
-          <FormLabel htmlFor='F_Lavanderias' mb='0'>
-            Lavanderias
-          </FormLabel>
-          <Switch id='F_Lavanderias' />
-          <FormLabel htmlFor='F_Utilidades' mb='0'>
-            Tiendas de utilidades.
-          </FormLabel>
-          <Switch id='F_Utilidades' />
-          <FormLabel htmlFor='F_Ferias' mb='0'>
-            Ferias
-          </FormLabel>
-          <Switch id='F_Ferias' />
-          <FormLabel htmlFor='F_Tecnicos' mb='0'>
-            Servicios tecnicos
-          </FormLabel>
-          <Switch id='F_Tecnicos' />
-          <FormLabel htmlFor='F_Salud' mb='0'>
-            Salud
-          </FormLabel>
-          <Switch id='F_Salud' />
+          {categoryResponse.map((cat) => {
+            return (
+              <><FormLabel htmlFor={cat.name} mb='0'>{cat.name}</FormLabel>
+              <Switch id={cat.name} /></>
+            )
+          })};
           </Stack>
           </DrawerBody>
 
