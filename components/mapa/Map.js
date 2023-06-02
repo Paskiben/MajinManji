@@ -12,7 +12,7 @@ import { Icon } from "leaflet";
 // Iconos de marcadores personalizados
 const myIcon = new L.Icon({
     iconUrl: "/images/marker.png",//iconouwu,
-    iconSize: [25, 41],
+    iconSize: [40, 40],
     iconAnchor: [12, 41],
     popupAnchor: [0, -36],
 });
