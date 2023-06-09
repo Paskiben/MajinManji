@@ -35,10 +35,10 @@ const Home = () =>{
   useEffect(() => {
     async function getCategories()
     {
-      const response = await fetch('http://localhost:3000/api/category');
+      const response = await fetch('https://majinvaldi.000webhostapp.com/category');
       const res = await response.json();
-      console.log(res.result);
-      setCategories(res.result);
+      console.log(res);
+      setCategories(res);
     }
     getCategories();
   }, []);

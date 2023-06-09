@@ -24,10 +24,10 @@ export default function Map({ filtros }) {
   useEffect(() => {
     async function getPlaces()
     {
-      const response = await fetch('http://localhost:3000/api/place');
+      const response = await fetch('https://majinvaldi.000webhostapp.com/place');
       const res = await response.json();
-      console.log(res.result);
-      setPlaces(res.result);
+      console.log(res);
+      setPlaces(res);
     }
     getPlaces();
   }, []);
