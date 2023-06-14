@@ -18,27 +18,27 @@ const myIcon = new L.Icon({
 });
 
 export default function Map({ filtros }) {
-  console.log(filtros);
-
+  const position_valdivia = [-39.823651901716296, -73.23533346913247];
+  
   const [placeResponse, setPlaces] = useState([]);
   useEffect(() => {
     async function getPlaces()
     {
       const response = await fetch('https://majinvaldi.000webhostapp.com/place');
-      const res = [];
+      let res = [];
       const tmp = await response.json();
-      tmp.forEach(place => {
-        if(filtros.includes(place.category))
-        {
-          res.push(place);
-        }
-      });
+      if(filtros.length > 0){
+        tmp.forEach(place => {
+            if(filtros.includes(place.category))
+            {
+              res.push(place);
+            }
+        });
+      } else { res = tmp; }
       setPlaces(res);
     }
     getPlaces();
-  }, []);
-
-  const position_valdivia = [-39.823651901716296, -73.23533346913247];
+  }, [filtros]);
   return (
     <>
       <Head>
@@ -56,7 +56,7 @@ export default function Map({ filtros }) {
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          {placeResponse.map((place) => {
+          {(placeResponse != null)?placeResponse.map((place) => {
             return (
               <Marker position={[place.latitude, place.longitude]} icon={myIcon}>
                 <Popup>
@@ -64,7 +64,7 @@ export default function Map({ filtros }) {
                 </Popup>
               </Marker>
             )
-          })}
+          }):<p></p>}
         </MapContainer>
       </div>
     </>
