@@ -30,7 +30,7 @@ import {
 const Home = () =>{
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
-  const [filtros, setFiltros] = useState([]);
+  const [filtros, setFiltros] = useState(['0']);
   //load data from database
   const [categoryResponse, setCategories] = useState([]);
   useEffect(() => {

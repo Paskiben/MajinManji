@@ -7,7 +7,7 @@ import Head from "next/head";
 
 // React
 import { useState, useEffect } from "react";
-import { Icon } from "leaflet";
+import Place from "./Place";
 
 // Iconos de marcadores personalizados
 const myIcon = new L.Icon({
@@ -39,7 +39,6 @@ export default function Map({ filtros }) {
   }, []);
 
   const position_valdivia = [-39.823651901716296, -73.23533346913247];
-  var marker = position_valdivia;
   return (
     <>
       <Head>
@@ -61,7 +60,7 @@ export default function Map({ filtros }) {
             return (
               <Marker position={[place.latitude, place.longitude]} icon={myIcon}>
                 <Popup>
-                  <b>{place.name}</b><br /> {place.description}
+                  <Place name={place.name} description={place.description} ups={place.upvotes} downs={place.downvotes} />
                 </Popup>
               </Marker>
             )
