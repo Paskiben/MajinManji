@@ -30,6 +30,7 @@ import {
 const Home = () =>{
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
+  const [filtros, setFiltros] = useState([]);
   //load data from database
   const [categoryResponse, setCategories] = useState([]);
   useEffect(() => {
@@ -61,21 +62,27 @@ const Home = () =>{
           {categoryResponse.map((cat) => {
             return (
               <><FormLabel htmlFor={cat.name} mb='0'>{cat.name}</FormLabel>
-              <Switch id={cat.name} /></>
+              <Switch id={cat.name} onChange={(change) => {
+                if(change.target.checked && !filtros.includes(cat.id)){
+                  filtros.push(cat.id);
+                }
+                else if(!change.target.checked && filtros.includes(cat.id)){
+                  let i = filtros.indexOf(cat.id);
+                  filtros.splice(i, 1);
+                }
+              }} /></>
             )
           })};
           </Stack>
           </DrawerBody>
 
           <DrawerFooter>
-            <Button variant='outline' mr={3} onClick={onClose}>
-              Cancel
-            </Button>
+            <Button variant='outline' mr={3} onClick={onClose}>Cancel</Button>
             <Button colorScheme='blue'>Save</Button>
           </DrawerFooter>
         </DrawerContent>
       </Drawer>
-    <Map/>
+    <Map filtros={filtros}/>
   </>);
 }
 export default Home;

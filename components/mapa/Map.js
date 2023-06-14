@@ -25,8 +25,14 @@ export default function Map({ filtros }) {
     async function getPlaces()
     {
       const response = await fetch('https://majinvaldi.000webhostapp.com/place');
-      const res = await response.json();
-      console.log(res);
+      const res = [];
+      const tmp = await response.json();
+      tmp.forEach(place => {
+        if(filtros.includes(place.category))
+        {
+          res.push(place);
+        }
+      });
       setPlaces(res);
     }
     getPlaces();
