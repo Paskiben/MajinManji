@@ -3,7 +3,6 @@
 #map {
   height: 700px;
   width: 90%;
-  margin: 20px auto;
   border: 2px solid #ccc;
   border-radius: 10px;
 }
@@ -12,8 +11,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  padding: 3rem;
   background-color: #a6a8a9;
   position: relative;
+}
+
+.whisper{
+  color: gray;
+  text-align: center;
 }
