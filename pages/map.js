@@ -45,9 +45,6 @@ const Home = () =>{
 	}, []);
 
 	const { user, isAuthenticated, isLoading } = useAuth0();
-	useEffect(() => {
-		console.log(user);
-	}, [user])
   
   	return(<>
 	<Button ref={btnRef} colorScheme='teal' onClick={onOpen}>Filtros</Button>

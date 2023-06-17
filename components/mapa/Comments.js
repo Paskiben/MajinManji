@@ -13,7 +13,6 @@ export default function Comments({ place }){
     {
         const response = await fetch('https://majinvaldi.000webhostapp.com/comments?p='+place);
         const res = await response.json();
-        console.log(res);
         setComments(res);
     }
     getComments();
@@ -28,7 +27,7 @@ export default function Comments({ place }){
             finalFocusRef={btnRef}
         >
             <DrawerOverlay />
-            <DrawerContent>
+            <DrawerContent minW="35vw">
                 <DrawerCloseButton />
                 <DrawerBody>
                     <Stack top={'25'}>

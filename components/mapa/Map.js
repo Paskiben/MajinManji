@@ -25,19 +25,18 @@ const [placeResponse, setPlaces] = useState([]);
 useEffect(() => {
 	async function getPlaces()
 	{
-	const response = await fetch('https://majinvaldi.000webhostapp.com/place');
-	let res = [];
-	const tmp = await response.json();
-	if(filtros.length > 0){
-		tmp.forEach(place => {
-			if(filtros.includes(place.category))
-			{
-			res.push(place);
-			}
-		});
-	} else { res = tmp; }
-	setPlaces(res);
-	console.log(res);
+		const response = await fetch('https://majinvaldi.000webhostapp.com/place');
+		let res = [];
+		const tmp = await response.json();
+		if(filtros.length > 0){
+			tmp.forEach(place => {
+				if(filtros.includes(place.category))
+				{
+				res.push(place);
+				}
+			});
+		} else { res = tmp; }
+		setPlaces(res);
 	}
 	getPlaces();
 }, [filtros]);
@@ -61,8 +60,8 @@ return (
 		{(placeResponse != null)?placeResponse.map((place) => {
 			return (
 			<Marker key={place.id} position={[place.latitude, place.longitude]} icon={myIcon}>
-				<Popup>
-				<Place pid={place.id} name={place.name} description={place.description} ups={place.upvotes} downs={place.downvotes} />
+				<Popup minWidth="fit-content">
+				<Place pid={place.id} name={place.name} description={place.description} ups={JSON.parse(place.votes).up} downs={JSON.parse(place.votes).down} />
 				<Comments place={place.id} />
 				</Popup>
 			</Marker>
