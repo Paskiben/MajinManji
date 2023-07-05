@@ -38,8 +38,8 @@ return (<>
 	<div>
 	{!location ? <Button onClick={handleLocationClick}>Get Location</Button> : <Center>
 			<form method='post' action='https://majinvaldi.000webhostapp.com/admin/place/add'>
-				<Input name='lat' type='hidden' value={location.latitude}></Input>
-				<Input name='long' type='hidden' value={location.longitude}></Input>
+				<Input name='lat' value={location.latitude}></Input>
+				<Input name='long' value={location.longitude}></Input>
 				<FormLabel htmlFor='name'>Name&nbsp;&nbsp;</FormLabel>
 				<Input name='name'></Input><br />
 				<FormLabel htmlFor='description'>Description&nbsp;&nbsp;</FormLabel>
