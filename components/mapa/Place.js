@@ -25,11 +25,11 @@ export default function Place({pid, name, description}){
                     <GridItem colSpan={3} rowSpan={2} h='100%'>{description}</GridItem>
                     <GridItem>
                         {votes.up.length}
-                        <Button>⬆</Button>
+                        <Button onClick={() =>{let tmp = votes.up;tmp.push("Votado");setVotes({"up":tmp,"down":votes.down})}}>⬆</Button>
                     </GridItem>
                     <GridItem>
                         {votes.down.length}
-                        <Button>⬇</Button>
+                        <Button onClick={() =>{let tmp = votes.down;tmp.push("Votado");setVotes({"up":votes.up,"down":tmp})}}>⬇</Button>
                     </GridItem>
                 </Grid>
             </CardBody>
